@@ -61,7 +61,7 @@ async function run(){
       res.send(result);
     })
 
-    // get review by id
+    
     app.get('/review',async(req,res)=>{
       let  query={};
       console.log(req.query.email)
