@@ -46,7 +46,7 @@ async function run(){
       res.send(result);
     })
 
-    // get item details by id
+    
     app.get('/itemDetails/:id',async(req,res)=>{
       const id=req.params.id;
       const query={_id:ObjectId(id)}
