@@ -21,7 +21,8 @@ async function run(){
     const itemsCollection = client.db("TahminasKitchen").collection("items");
     // const orderCollection=client.db("GeniousCarOrder").collection("order");
     
-    // Load all items
+    
+    // Load 3 items
     app.get('/items',async(req,res)=>{
       const query={};
       const cursor=itemsCollection.find(query);
@@ -29,6 +30,7 @@ async function run(){
       res.send(items);
     })
 
+    // Load all items
     app.get('/allItems',async(req,res)=>{
       const query={};
       const cursor=itemsCollection.find(query);
@@ -36,7 +38,7 @@ async function run(){
       res.send(allItems);
     })
 
-    // get item details
+    // get item details by id
     app.get('/itemDetails/:id',async(req,res)=>{
       const id=req.params.id;
       const query={_id:ObjectId(id)}
