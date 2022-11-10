@@ -148,7 +148,7 @@ async function run(){
 
 
     // update review
-    app.patch('/userReview/:id',async(req,res)=>{
+    app.put('/userReview/:id',async(req,res)=>{
       const id=req.params.id;
       const status=req.body.status;
       const query={_id:ObjectId(id)}
