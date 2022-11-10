@@ -106,7 +106,7 @@ async function run(){
     app.get('/review',async(req,res)=>{
       
       let  query={};
-      console.log(req.query.email)
+      // console.log(req.query.email)
       if(req.query.item){
         query={
           item:req.query.item
@@ -115,6 +115,7 @@ async function run(){
       
       const cursor=reviewCollection.find(query);
       const review=await cursor.sort({_id:-1}).toArray();
+      console.log(review)
       res.send(review);
     })
 
